@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- daisyUi -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="navbar bg-base-100 shadow-sm">
+        <div class="w-11/12 mx-auto flex items-center">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="-1"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+                font-semibold
+              >
+                <li><a class="nav-link active" href="/">Home</a></li>
+                <li><a class="nav-link" href="/Product.html">Product</a></li>
+                <li><a class="nav-link">About</a></li>
+                <li><a class="nav-link">Contact</a></li>
+              </ul>
+            </div>
+            <a class="text-primary text-2xl font-bold">SwiftCart</a>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 font-semibold">
+              <li><a class="nav-link active" href="/">Home</a></li>
+              <li><a class="nav-link" href="/Product.html">Product</a></li>
+              <li><a class="nav-link">About</a></li>
+              <li><a class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <a><i class="fa-solid fa-cart-shopping"></i></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero section -->
+    <section>
+      <div class="hero min-h-screen relative overflow-hidden">
+        <div
+          class="absolute inset-0 bg-center bg-cover opacity-50"
+          style="background-image: url(&quot;./banner-image.png&quot;)"
+        ></div>
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="hero-content relative text-neutral-content">
+          <div class="max-w-md">
+            <h1 class="mb-5 text-4xl font-bold">Best Collection For You</h1>
+            <p class="mb-5">
+              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+              excepturi exercitationem quasi.
+            </p>
+            <button class="btn btn-primary">Shop Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- choose us section -->
+    <section class="py-15 bg-gray-50">
+      <div class="w-11/12 mx-auto">
+        <div class="text-center mb-10">
+          <h1 class="text-3xl font-bold mb-4">Why Choose Us</h1>
+          <p class="text-gray-500 max-w-2xl mx-auto">
+            We provide the best shopping experience with top-notch services.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div class="bg-white rounded-xl p-5 shadow-md">
+            <i
+              class="fa-solid fa-truck text-blue-500 mb-4"
+              style="font-size: 35px"
+            ></i>
+            <h3 class="text-lg font-semibold mb-2">Fast Delivery</h3>
+            <p class="text-gray-500">
+              Get your orders delivered to your doorstep quickly and
+              efficiently.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-5 shadow-md">
+            <i
+              class="fa-solid fa-headset text-blue-500 mb-4"
+              style="font-size: 35px"
+            ></i>
+            <h3 class="text-lg font-semibold mb-2">24/7 Support</h3>
+            <p class="text-gray-500">
+              Our support team is available around the clock to assist you.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-5 shadow-md">
+            <i
+              class="fa-solid fa-lock text-blue-500 mb-4"
+              style="font-size: 35px"
+            ></i>
+            <h3 class="text-lg font-semibold mb-2">Secure Payment</h3>
+            <p class="text-gray-500">
+              Experience safe and secure transactions with our encrypted payment
+              systems.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-5 shadow-md">
+            <i
+              class="fa-solid fa-rotate-left text-blue-500 mb-4"
+              style="font-size: 35px"
+            ></i>
+            <h3 class="text-lg font-semibold mb-2">Easy Returns</h3>
+            <p class="text-gray-500">
+              Not satisfied? Return your products easily within 30 days.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- trending -->
+    <section class="py-12 w-11/12 mx-auto">
+      <!-- Section Title -->
+      <div class="mb-8 text-center sm:text-left">
+        <h1 class="text-3xl font-bold">Trending Now</h1>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <!-- Card -->
+        <div class="card bg-base-100 shadow-md">
+          <figure>
+            <img
+              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+              alt="Shoes"
+              class="h-48 w-full"
+            />
+          </figure>
+
+          <!-- Category + Rating -->
+          <div class="flex justify-between items-center px-4 mt-3 text-sm">
+            <div class="badge badge-soft badge-primary">Men's Clothing</div>
+            <p>⭐ 4.7 (500)</p>
+          </div>
+
+          <!-- Card Body -->
+          <div class="card-body pt-4">
+            <h2 class="card-title text-base">Mens Casual Premium Slim</h2>
+
+            <p class="text-xl font-bold">$22</p>
+
+            <!-- Buttons -->
+            <div class="card-actions justify-between mt-4">
+              <button class="btn btn-outline btn-neutral flex-1">
+                <i class="fa-regular fa-eye"></i>
+                Details
+              </button>
+
+              <button class="btn btn-primary flex-1">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-md">
+          <figure>
+            <img
+              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+              alt="Shoes"
+              class="h-48 w-full"
+            />
+          </figure>
+
+          <!-- Category + Rating -->
+          <div class="flex justify-between items-center px-4 mt-3 text-sm">
+            <div class="badge badge-soft badge-primary">Men's Clothing</div>
+            <p>⭐ 4.7 (500)</p>
+          </div>
+
+          <!-- Card Body -->
+          <div class="card-body pt-4">
+            <h2 class="card-title text-base">Mens Casual Premium Slim</h2>
+
+            <p class="text-xl font-bold">$22</p>
+
+            <!-- Buttons -->
+            <div class="card-actions justify-between mt-4">
+              <button class="btn btn-outline btn-neutral flex-1">
+                <i class="fa-regular fa-eye"></i>
+                Details
+              </button>
+
+              <button class="btn btn-primary flex-1">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-md">
+          <figure>
+            <img
+              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+              alt="Shoes"
+              class="h-48 w-full"
+            />
+          </figure>
+
+          <!-- Category + Rating -->
+          <div class="flex justify-between items-center px-4 mt-3 text-sm">
+            <div class="badge badge-soft badge-primary">Men's Clothing</div>
+            <p>⭐ 4.7 (500)</p>
+          </div>
+
+          <!-- Card Body -->
+          <div class="card-body pt-4">
+            <h2 class="card-title text-base">Mens Casual Premium Slim</h2>
+
+            <p class="text-xl font-bold">$22</p>
+
+            <!-- Buttons -->
+            <div class="card-actions justify-between mt-4">
+              <button class="btn btn-outline btn-neutral flex-1">
+                <i class="fa-regular fa-eye"></i>
+                Details
+              </button>
+
+              <button class="btn btn-primary flex-1">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Card end -->
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-gray-800 text-gray-400 text-neutral-content py-12">
+      <div class="w-11/12 mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div>
+            <h2 class="text-primary text-2xl font-bold mb-2">SwiftCart</h2>
+            <p>
+              Your one step for all your fashion and lifestyle needs. Quality
+              products, fast delivery, and excellent support.
+            </p>
+          </div>
+
+          <div>
+            <h6 class="footer-title mb-4">Quick Links</h6>
+            <nav class="flex flex-col gap-2">
+              <a class="link link-hover">Home</a>
+              <a class="link link-hover">Products</a>
+              <a class="link link-hover">About</a>
+              <a class="link link-hover">Contact</a>
+            </nav>
+          </div>
+
+          <div>
+            <h6 class="footer-title mb-4">Support</h6>
+            <nav class="flex flex-col gap-2">
+              <a class="link link-hover">FAQ</a>
+              <a class="link link-hover">Shipping</a>
+              <a class="link link-hover">Return</a>
+              <a class="link link-hover">Privacy Policy</a>
+            </nav>
+          </div>
+
+          <div>
+            <h6 class="footer-title mb-4">Subscribe to Newsletter</h6>
+            <p class="mb-4">
+              The latest news, articles, and resources, sent to your inbox
+              weekly.
+            </p>
+            <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+              <input
+                type="email"
+                placeholder="username@site.com"
+                class="input input-bordered w-full sm:flex-1"
+              />
+              <button class="btn btn-primary w-full sm:w-auto">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-10 border-t border-gray-700 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <div class="0 text-sm text-center sm:text-left">
+            © 2026 SwiftCart, Inc. All rights reserved
+          </div>
+
+          <div class="flex justify-center sm:justify-end gap-4 text-2xl">
+            <a href="#" class="hover:text-blue-600">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#" class="hover:text-blue-400">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+
+            <a href="#" class="hover:text-pink-500">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" class="hover:text-blue-700">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="#" class="hover:text-red-500">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
