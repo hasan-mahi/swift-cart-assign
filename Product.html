@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-
     <link rel="stylesheet" href="style.css" />
 
     <!-- daisyUi -->
@@ -51,8 +50,10 @@
                 class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
                 font-semibold
               >
-                <li><a class="nav-link active" href="/">Home</a></li>
-                <li><a class="nav-link" href="/Product.html">Product</a></li>
+                <li><a class="nav-link" href="/">Home</a></li>
+                <li>
+                  <a class="nav-link active" href="/Product.html">Product</a>
+                </li>
                 <li><a class="nav-link">About</a></li>
                 <li><a class="nav-link">Contact</a></li>
               </ul>
@@ -61,14 +62,16 @@
           </div>
           <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1 font-semibold">
-              <li><a class="nav-link active" href="/">Home</a></li>
-              <li><a class="nav-link" href="/Product.html">Product</a></li>
+              <li><a class="nav-link" href="/">Home</a></li>
+              <li>
+                <a class="nav-link active" href="/Product.html">Product</a>
+              </li>
               <li><a class="nav-link">About</a></li>
               <li><a class="nav-link">Contact</a></li>
             </ul>
           </div>
           <div class="navbar-end">
-            <button class="btn btn-ghost relative">
+            <button class="btn btn-ghost relative" onclick="openCartModal()">
               <i class="fa-solid fa-cart-shopping text-xl"></i>
 
               <!-- Cart Count -->
@@ -79,105 +82,65 @@
                 0
               </span>
             </button>
+
+            <dialog id="cart_modal" class="modal modal-bottom sm:modal-middle">
+              <div class="modal-box max-w-2xl">
+                <h3 class="text-lg font-bold mb-4">Your Cart</h3>
+                <div
+                  id="cart-items"
+                  class="space-y-4 max-h-80 overflow-y-auto"
+                ></div>
+                <div
+                  class="flex justify-between items-center mt-6 border-t pt-4"
+                >
+                  <p class="text-lg font-semibold">Total:</p>
+                  <p id="cart-total" class="text-xl font-bold">$0</p>
+                </div>
+
+                <div class="modal-action">
+                  <form method="dialog">
+                    <button class="btn btn-outline">Close</button>
+                    <button class="btn btn-primary">Checkout</button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- Hero section -->
-    <section>
-      <div class="hero min-h-screen relative overflow-hidden">
-        <div
-          class="absolute inset-0 bg-center bg-cover opacity-50"
-          style="background-image: url(&quot;./banner-image.png&quot;)"
-        ></div>
-        <div class="absolute inset-0 bg-black/50"></div>
-        <div class="hero-content relative text-neutral-content">
-          <div class="max-w-md">
-            <h1 class="mb-5 text-4xl font-bold">Best Collection For You</h1>
-            <p class="mb-5">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi.
-            </p>
-            <button class="btn btn-primary">Shop Now</button>
-          </div>
-        </div>
+    <!-- product section -->
+    <section class="w-11/12 mx-auto py-12">
+      <!-- Section Heading -->
+      <div class="text-center mb-5">
+        <h1 class="text-3xl font-bold mb-2">Our Products</h1>
       </div>
+
+      <!-- Category Filters -->
+      <div
+        class="flex flex-wrap gap-3 justify-center mb-8"
+        id="category-container"
+      ></div>
+
+      <!-- loader -->
+      <div id="loader" class="flex justify-center my-10 hidden">
+        <span class="loading loading-bars loading-xl"></span>
+      </div>
+
+      <!-- Products Grid -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        id="card-container"
+      ></div>
     </section>
 
-    <!-- choose us section -->
-    <section class="py-15 bg-gray-50">
-      <div class="w-11/12 mx-auto">
-        <div class="text-center mb-10">
-          <h1 class="text-3xl font-bold mb-4">Why Choose Us</h1>
-          <p class="text-gray-500 max-w-2xl mx-auto">
-            We provide the best shopping experience with top-notch services.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <div class="bg-white rounded-xl p-5 shadow-md">
-            <i
-              class="fa-solid fa-truck text-blue-500 mb-4"
-              style="font-size: 35px"
-            ></i>
-            <h3 class="text-lg font-semibold mb-2">Fast Delivery</h3>
-            <p class="text-gray-500">
-              Get your orders delivered to your doorstep quickly and
-              efficiently.
-            </p>
-          </div>
-
-          <div class="bg-white rounded-xl p-5 shadow-md">
-            <i
-              class="fa-solid fa-headset text-blue-500 mb-4"
-              style="font-size: 35px"
-            ></i>
-            <h3 class="text-lg font-semibold mb-2">24/7 Support</h3>
-            <p class="text-gray-500">
-              Our support team is available around the clock to assist you.
-            </p>
-          </div>
-
-          <div class="bg-white rounded-xl p-5 shadow-md">
-            <i
-              class="fa-solid fa-lock text-blue-500 mb-4"
-              style="font-size: 35px"
-            ></i>
-            <h3 class="text-lg font-semibold mb-2">Secure Payment</h3>
-            <p class="text-gray-500">
-              Experience safe and secure transactions with our encrypted payment
-              systems.
-            </p>
-          </div>
-
-          <div class="bg-white rounded-xl p-5 shadow-md">
-            <i
-              class="fa-solid fa-rotate-left text-blue-500 mb-4"
-              style="font-size: 35px"
-            ></i>
-            <h3 class="text-lg font-semibold mb-2">Easy Returns</h3>
-            <p class="text-gray-500">
-              Not satisfied? Return your products easily within 30 days.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- trending -->
-    <section class="py-12 w-11/12 mx-auto">
-      <!-- Section Title -->
-      <div class="mb-8 text-center sm:text-left">
-        <h1 class="text-3xl font-bold">Trending Now</h1>
-      </div>
-
-      <!-- Cards Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="card-container">
-  
-        <!-- Card end -->
-      </div>
-    </section>
+    <!-- modal -->
+    <!-- Open the modal using ID.showModal() method -->
+    <dialog
+      id="product-modal"
+      class="modal modal-bottom sm:modal-middle"
+    ></dialog>
 
     <!-- footer -->
     <footer class="bg-gray-800 text-gray-400 text-neutral-content py-12">
@@ -262,6 +225,7 @@
       </div>
     </footer>
 
-    <script src="./js/index.js"></script>
+    <script src="./js/cartLocal.js"></script>
+    <script src="./js/product.js"></script>
   </body>
 </html>
